@@ -1,10 +1,66 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Private Site</title>
+  <title>Private Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: #0f0f0f;
+      color: white;
+      font-family: Arial;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .box {
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 350px;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: none;
+    }
+    button {
+      background: #00bfff;
+      font-weight: bold;
+    }
+    #msg {
+      margin-top: 10px;
+      color: red;
+    }
+  </style>
 </head>
 <body>
-  <h1>It works 🎉</h1>
-  <p>My website is live.</p>
+
+<div class="box">
+  <h2>Login</h2>
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+  <p id="msg"></p>
+</div>
+
+<script>
+  function login() {
+    const email = document.getElementById("email").value;
+    const pass = document.getElementById("password").value;
+
+    if (email === "yusufsodiq082@gmail.com" && pass === "a336336a") {
+      localStorage.setItem("loggedIn", "yes");
+      window.location.href = "videos.html";
+    } else {
+      document.getElementById("msg").innerText = "Incorrect login or password";
+    }
+  }
+</script>
+
 </body>
 </html>
